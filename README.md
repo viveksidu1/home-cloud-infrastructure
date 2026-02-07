@@ -14,6 +14,11 @@ MEDIA STREAMING: Serves as a Netflix or Amazon Prime alternative to stream your 
 GLOBAL ACCESS: View your data from anywhere on the internet using any device or browser.
 
 
+
+![diagram](images/diagram.png)
+
+
+
 ## Hardware Prerequisites
 To run this server, you will need the following hardware in your home or office:
 
