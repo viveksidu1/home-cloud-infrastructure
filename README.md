@@ -286,9 +286,11 @@ Configure Jellyfin Config Storage to a Host Path on the Mirror pool.
 Add Additional Storage with a Host Path to your media folder (e.g., JellyFin_Data) and set the mount path to /media.
 
 Jellyfin configuration storage mapping
+
 ![jf](images/jf1.jpg)
 
 Jellyfin media library additional storage mapping
+
 ![jf](images/jf2.jpg)
 
 
@@ -366,30 +368,56 @@ Selecting the Free Cloudflare plan
 
 Delete any existing DNS records and update your domain registrar's Name Servers to those provided by Cloudflare.
 
-![Image: Deleting old DNS records in Cloudflare] 
+Deleting old DNS records in Cloudflare
 
-![Image: Cloudflare assigned Nameservers] 
+![cloudflare](images/cf5.jpg)
 
-![Image: Updating Nameservers at the domain registrar] 
 
-![Image: Domain showing as active in Cloudflare] 
+Cloudflare assigned Nameservers
+
+![cloudflare](images/cf6.jpg)
+
+
+Updating Nameservers at the domain registrar
+
+![cloudflare](images/cf7.jpg)
+
+
+Domain showing as active in Cloudflare
+
+![cloudflare](images/cf8.jpg)
 
 ### Creating the Tunnel
 In Zero Trust, navigate to Network -> Tunnel and add a new Cloudflared tunnel.
 
-![Image: Cloudflare Zero Trust Tunnels page] 
+Cloudflare Zero Trust Tunnels page
 
-![Image: Selecting the Cloudflared tunnel type] 
+![cloudflare](images/cf9.jpg)
+
+
+Selecting the Cloudflared tunnel type
+
+![cloudflare](images/cf10.jpg)
+
 
 Name the tunnel and copy the secret token.
 
-![Image: Naming the tunnel] 
+Naming the tunnel
 
-![Image: Connector installation showing the token command] 
+![cloudflare](images/cf11.jpg)
+
+
+Connector installation showing the token command
+
+![cloudflare](images/cf12.jpg)
+
 
 Install the Cloudflare Tunnel app on TrueNAS SCALE and paste the token.
 
-![Image: Apps dashboard with Cloudflared running] 
+Apps dashboard with Cloudflared running
+
+![tunnel](images/tun1.jpg)
+
 
 Add Public Hostnames in Cloudflare to map subdomains to your local App ports.
 
@@ -398,14 +426,19 @@ Example: nextcloud.lazytourer.online -> http://192.168.0.108:9001.
 ### 11. Nextcloud External Access Configuration
 Open System Settings -> Shell and run sudo su.
 
-![Image: TrueNAS Shell with root access] 
+TrueNAS Shell with root access
+
+![shell](images/root1.jpg)
+
 
 Edit config.php using Nano: nano /mnt/[Your_Pool]/ix-applications/releases/nextcloud/volumes/ix_volumes/html/config/config.php.
 
 Add your subdomain to the 'trusted_domains' array.
-+1
 
-![Image: Editing config.php to add trusted domains] 
+Editing config.php to add trusted domains
+
+![shell](images/root2.jpg)
+
 
 ## Mobile App Configuration
 Download the Nextcloud app from the Play Store or App Store.
@@ -413,17 +446,31 @@ Download the Nextcloud app from the Play Store or App Store.
 Login via your server IP or subdomain.
 
 Enable Auto Upload in settings and configure your camera folders.
-+1
 
-![Image: Nextcloud mobile app settings] 
+Nextcloud mobile app settings
 
-![Image: Enabling Auto upload in mobile app] 
+![mobile](images/mobile1.jpg)
 
-![Image: Configuring folder for auto upload] 
 
-![Image: Setting remote folder path to /Photos/] 
+Enabling Auto upload in mobile app
 
-![Image: Uploads progress screen in Nextcloud mobile app] 
+![mobile](images/mobile2.jpg)
+
+
+Configuring folder for auto upload
+
+![mobile](images/mobile3.jpg)
+
+
+Setting remote folder path to /Photos/
+
+![mobile](images/mobile4.jpg)
+
+
+Uploads progress screen in Nextcloud mobile app
+
+![mobile](images/mobile5.jpg)
+
 
 ## Conclusion
 Your self-hosted home cloud is now fully operational, accessible globally, and ready for private backups and streaming. Ongoing costs are limited to the monthly electricity (approx. Rs. 250–300) and your annual domain renewal
