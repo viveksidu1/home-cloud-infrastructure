@@ -344,16 +344,27 @@ Purchase a cheap TLD domain (e.g., .online or .pw).
 
 Add the site to a free Cloudflare account.
 
-![Image: Cloudflare login page] 
+Cloudflare login page
 
-![Image: Adding a new site to Cloudflare dashboard] 
+![cloudflare](images/cf1.jpg)
 
-![Image: Entering the domain name] 
 
-![Image: Selecting the Free Cloudflare plan] 
+Adding a new site to Cloudflare dashboard
+
+![cloudflare](images/cf2.jpg)
+
+
+Entering the domain name
+
+![cloudflare](images/cf3.jpg)
+
+
+Selecting the Free Cloudflare plan
+
+![cloudflare](images/cf4.jpg)
+
 
 Delete any existing DNS records and update your domain registrar's Name Servers to those provided by Cloudflare.
-+1
 
 ![Image: Deleting old DNS records in Cloudflare] 
 
