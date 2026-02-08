@@ -3,15 +3,15 @@ This project outlines the setup of a personal, self-hosted server designed to ac
 
 ## What is the Purpose?
 
-PRIVACY: No large companies will have access to your data, ensuring full privacy and security.
+PRIVACY:-  No large companies will have access to your data, ensuring full privacy and security.
 
-CLOUD ALTERNATIVE: Acts as a replacement for Google Drive, Google Photos, Microsoft OneDrive, Apple iCloud, and Dropbox.
+CLOUD ALTERNATIVE:-  Acts as a replacement for Google Drive, Google Photos, Microsoft OneDrive, Apple iCloud, and Dropbox.
 
-AUTOMATIC BACKUPS: Automatically syncs phone and computer data (photos and videos) and frees up local storage.
+AUTOMATIC BACKUPS:-  Automatically syncs phone and computer data (photos and videos) and frees up local storage.
 
-MEDIA STREAMING: Serves as a Netflix or Amazon Prime alternative to stream your movie collection on any device.
+MEDIA STREAMING:-  Serves as a Netflix or Amazon Prime alternative to stream your movie collection on any device.
 
-GLOBAL ACCESS: View your data from anywhere on the internet using any device or browser.
+GLOBAL ACCESS:-  View your data from anywhere on the internet using any device or browser.
 
 
 
@@ -23,40 +23,56 @@ GLOBAL ACCESS: View your data from anywhere on the internet using any device or 
 To run this server, you will need the following hardware in your home or office:
 
 
-INTERNET CONNECTION: High-speed connection required.
+INTERNET CONNECTION:-  High-speed connection required.
 
-NETWORKING: Router or switch with a free LAN port (1Gbps preferred).
+NETWORKING:-  Router or switch with a free LAN port (1Gbps preferred).
 
-SERVER HARDWARE: A spare computer (desktop or laptop) to convert into a server.
+SERVER HARDWARE:-  A spare computer (desktop or laptop) to convert into a server.
 
-INPUT/OUTPUT: Monitor, keyboard, and mouse for the initial installation.
+INPUT/OUTPUT:-  Monitor, keyboard, and mouse for the initial installation.
 
-STORAGE MEDIA: * 64GB SanDisk USB PenDrive for the installer ISO.
+STORAGE MEDIA:-  * 64GB SanDisk USB PenDrive for the installer ISO.
 ->64GB HP USB PenDrive for the OS installation storage.
 
-PRIMARY PC: For remote setup and management.
+PRIMARY PC:-  For remote setup and management.
 
 
-### Reference Build Configuration
-For this project, a PC was built with components from Amazon India for approximately Rs. 20,500/-: | Component | Specification | | :--- | :--- | | CPU | Intel Pentium Gold G6400 (2C/4T @ 4.0 GHz)  | | Motherboard | Gigabyte H410M  | | RAM | 16GB (8GB x 2) DDR4 2666 RAM  | | Storage 1 | 500GB NVME SSD x1  | | Storage 2 | SATA 2.5inch 500GB HDD x1  | | Storage 3 | 256GB SSD x2  |
+### ------------------------------ Reference Build Configuration ------------------------------
+For this project, a PC was built with components from Amazon India for approximately Rs. 20,500/-: 
+
+| Component | Specification | 
+
+| CPU | Intel Pentium Gold G6400 (2C/4T @ 4.0 GHz)  |
+
+| Motherboard | Gigabyte H410M  | 
+
+| RAM | 16GB (8GB x 2) DDR4 2666 RAM  |
+
+| Storage 1 | 500GB NVME SSD x1  | 
+
+| Storage 2 | SATA 2.5inch 500GB HDD x1  |
+
+| Storage 3 | 256GB SSD x2  |
+
+
 
 ## Software Prerequisites
 The setup uses legal, mostly open-source, and free software:
 
 
-OS: TrueNAS SCALE 
+OS:-  TrueNAS SCALE 
 
-STORAGE/CLOUD: NextCloud 
+STORAGE/CLOUD:-  NextCloud 
 
-PHOTOS: PhotoPrism 
+PHOTOS:-  PhotoPrism 
 
-MEDIA: Jellyfin 
+MEDIA:-  Jellyfin 
 
-MANAGEMENT: File Browser 
+MANAGEMENT:-  File Browser 
 
-REMOTE ACCESS: CloudFlare Tunnel 
+REMOTE ACCESS:-  CloudFlare Tunnel 
 
-ADMINISTRATIVE: One credit/debit card and one TLD domain name.
+ADMINISTRATIVE:-  One credit/debit card and one TLD domain name.
 
 
 
@@ -72,7 +88,9 @@ Important: You must force Rufus to use "DD Image mode" because TrueNAS SCALE (ba
 
 
 ![Sandisk](images/SanDisk.jpeg)
+
 ![Rufus](images/rufus1.jpeg)
+
 ![rufus](images/rufus2.jpeg)
 
 
@@ -91,6 +109,7 @@ Select the HP USB Flash Drive as the destination disk for the OS installation an
 
 
 ![boot](images/boot.jpeg)
+
 ![hp](images/hp.jpeg)
 
 
@@ -110,6 +129,7 @@ Login with the credentials set during installation.
 
 
 ![truenas1](images/truenas1.png) 
+
 ![truenas2](images/truenas2.png)
 
 
@@ -121,7 +141,9 @@ Edit your interface (e.g., eno1), disable DHCP, and manually add your current IP
 
 
 ![ip](images/ip1.png)
+
 ![ip](images/ip2.png)
+
 ![ip](images/ip3.png)
 
 
@@ -144,6 +166,7 @@ Single SSD Pool (Stripe): Name the pool (e.g., DYAZO_SSD_240GB) and select Strip
 
 
 ![pool](images/pool1.png) 
+
 ![pool](images/pool2.png) 
 
 
@@ -153,8 +176,11 @@ Use Manual Disk Selection to add the disk to a VDEV.
 
 
 ![vdev](images/vdev1.png)
+
 ![vdev](images/vdev2.png) 
+
 ![vdev](images/vdev3.png)
+
 ![vdev](images/vdev4.png)
 
 
@@ -164,12 +190,19 @@ Mirror Pool (Dual Disk): Repeat the process but select Mirror layout and add two
 
 
 ![mirror](images/mirror1.png)
+
 ![mirror](images/mirror2.png) 
 
 
 
 
-Our Final Storage Pool Table: | Pool Name | Type | Details | | :--- | :--- | :--- | | DYAZO_SSD_240GB | Stripe | 1x 256GB SSD  | | NVME_240GB | Stripe | 1x 256GB SSD  | | MIRROR_480GB | Mirror | 1x 500GB HDD & 1x 500GB SSD  |
+Our Final Storage Pool Table: | Pool Name | Type | Details | | :--- 
+
+| DYAZO_SSD_240GB | Stripe | 1x 256GB SSD  | 
+
+| NVME_240GB | Stripe | 1x 256GB SSD  | 
+
+| MIRROR_480GB | Mirror | 1x 500GB HDD & 1x 500GB SSD  |
 
 ![list](images/list.png)
 
@@ -206,21 +239,27 @@ During installation, add your storage pools as "Additional Storage Locations" us
 Default login is admin / admin.
 
 File Browser App discovery page
+
 ![fb](images/fb1.png)
 
 Adding NVME_240GB host path to File Browser
+
 ![fb](images/fb2.png)
 
 Adding MIRROR_480GB host path to File Browser
+
 ![fb](images/fb3.png)
 
 Adding DYAZO_SSD_240GB host path to File Browser
+
 ![fb](images/fb4.png)
 
 Apps page showing File Browser running
+
 ![fb](images/fb5.png)
 
 File Browser login screen
+
 ![fb](images/fb6.png)
 
 
@@ -233,9 +272,11 @@ Select your Mirror pool and click Add Dataset.
 Name it Apps and set the preset to Apps.
 
 Datasets menu with Add Dataset highlighted
+
 ![dataset](images/dataset1.png)
 
 Creating the Apps dataset
+
 ![dataset](images/dataset2.jpg)
 
 
@@ -243,9 +284,11 @@ Creating the Apps dataset
 Edit Permissions to give the apps user Full Control.
 
 Permissions section for a dataset
+
 ![dataset](images/dataset3.jpg)
 
 ACL Editor setting Full Control for the apps user
+
 ![dataset](images/dataset4.jpg)
 
 
@@ -253,9 +296,11 @@ ACL Editor setting Full Control for the apps user
 Create sub-datasets for specific data (e.g., NC_Data, NC_DB) to ensure important user data stays on the Mirror drive.
 
 Final dataset hierarchy showing Apps, NC_Data, and NC_DB
+
 ![dataset](images/dataset5.jpg)
 
 Removing extra apps user permissions in ACL Editor
+
 ![dataset](images/dataset6.jpg)
 
 
@@ -266,12 +311,15 @@ Install from the Apps Catalogue.
 Set Host Paths for "Nextcloud User Data Storage" and "Nextcloud Postgres Data Storage" to the datasets created on the Mirror pool.
 
 Mapping Nextcloud user data to the Host Path
+
 ![nc](images/nc1.jpg)
 
 Mapping Nextcloud Postgres data to the Host Path
+
 ![nc](images/nc1.jpg)
 
 Apps page showing Nextcloud deploying
+
 ![nc](images/nc1.jpg)
 
 Nextcloud login portal
@@ -474,3 +522,29 @@ Uploads progress screen in Nextcloud mobile app
 
 ## Conclusion
 Your self-hosted home cloud is now fully operational, accessible globally, and ready for private backups and streaming. Ongoing costs are limited to the monthly electricity (approx. Rs. 250–300) and your annual domain renewal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
